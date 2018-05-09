@@ -78,9 +78,11 @@ while mode == "none":
 
                 #3 rounds to loop count | function of gamemode begins
                 while rounds < 3:
-                        #Player's choice
+                        
+                        #Player chooses the three options
                         player_choice = input("Rock, Paper, or Scissor: ")
 
+                        #goes back to player_choice if Input does not meet
                         if player_choice != "rock":
                                 if player_choice != "paper":
                                         if player_choice != "scissor":
