@@ -1,5 +1,5 @@
 import random
-# new line 2  junk
+# Title: Flex-Text game
 
 # welcome to flextextgame
 
@@ -9,37 +9,74 @@ import random
 # card
 # dice
 
-#  
+"""
+Objective: Beat the CPU (Computer) in either of the three random number
+generator game. Wins and loss for each game are accumulated.
+
+RPS: Rock, Paper, Scissor | Select either of the three choices
+
+        Win conditions:
+        Rock > Scissor
+        Paper > Rock
+        Scissor > Paper
+
+Dice: Roll the dice (only get to choose the amount of sides the dice has)
+
+        Win condition: Get a higher value than the CPU
+
+Cards: Select a card from the shuffled deck
+
+        Win condition: Get a higher value than the CPU
+
+        Card to Number defitnion:
+        Ace = 1
+        Jack = 11
+        Queen = 12
+        King = 13
+"""
 
 
-
-#menu
+#Mode to "none" indicating Parent to run
 mode = "none"
+
+#initial Total win/loss tallied
 win_total = 0
 loss_total = 0
 
+#Parent of all game modes 
 while mode == "none":
+        #Reset round win/loss
         win = 0
         loss = 0
 
+        #print total win/loss under the following conditions
         if win_total > 0:
                 print("Total Win: " + win_total)
         if loss_total > 0:
                 print("Total loss: " + loss_total)
+
+        #Menu: asks player to choose either of the three gamemodes
         mode = input("RPS, Dice, or Cards: ")
+
+        #Input from Menu converted to lowercase | accomodates for any uppercase string
         mode = mode.lower()
+
+        #loop for any input not favorable to Menu
         if mode != "rps":
                 if mode != "dice":
                         if mode != "cards":
                                 mode = "none"
                                 continue
+
         print('\n')
 
-        #Rock Paper Scissor Game
+        #Rock Paper Scissor | change if Menu receives "rps"
         while mode == "rps":
 
-                #three rounds/game function
+                #set Rounds to 0 for counting
                 rounds = 0
+
+                #3 rounds to loop count | function of gamemode begins
                 while rounds < 3:
                         #Player's choice
                         player_choice = input("Rock, Paper, or Scissor: ")
