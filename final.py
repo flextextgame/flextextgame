@@ -12,22 +12,15 @@ import random
 """
 Objective: Beat the CPU (Computer) in either of the three random number
 generator game. Wins and loss for each game are accumulated.
-
 RPS: Rock, Paper, Scissor | Select either of the three choices
-
         Win conditions:
         Rock > Scissor
         Paper > Rock
         Scissor > Paper
-
 Dice: Roll the dice (only get to choose the amount of sides the dice has)
-
         Win condition: Get a higher value than the CPU
-
 Cards: Select a card from the shuffled deck
-
         Win condition: Get a higher value than the CPU
-
         Card to Number defitnion:
         Ace = 1
         Jack = 11
