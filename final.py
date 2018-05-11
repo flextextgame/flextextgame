@@ -36,7 +36,7 @@ mode = "none"
 win_total = 0
 loss_total = 0
 
-#Parent of all game modes 
+#Parent of all gamemodes 
 while mode == "none":
         #Reset round win/loss
         win = 0
@@ -81,27 +81,29 @@ while mode == "none":
                                         if player_choice != "scissor":
                                                 player_choice = "none"
                                                 continue
+                        #makes player_choice lowercase for string comparison in win/loss/tie conditions
+                        player_choice = player_choice.lower()
                         
                         print('\n')
-                        
-                        player_choice = player_choice.lower()
+
+                        #print player_choice
                         print("Player: " + player_choice)
                         
                         #Computer's choice
                         cpu = random.randint(1, 3)
-
+                        #convert integers to nouns
                         if cpu == 1:
                                 cpu = "rock"
                         if cpu == 2:
                                 cpu = "paper"
                         if cpu == 3:
                                 cpu = "scissor"
-
+                        #print Computer's choice
                         print("Computer: " + cpu)
 
                         print('\n')
 
-                        #win/loss/tie conditions
+                        #win/loss/tie conditions for each of the three choices
                         if player_choice == "rock":
                                 if cpu == "rock":
                                         print("Tie")
@@ -132,18 +134,23 @@ while mode == "none":
                                         win = win + 1
                                         print("You Win")
 
+                        #print total wins and loss in each round
                         print("Wins: " + str(win))
                         print("Loss: " + str(loss))
 
                         print('\n')
 
+                        #count rounds to limit loop of gamemode
                         rounds = rounds + 1
 
                 #continue or change mode
                 continue_mode = input("Continue [1] or Change Mode [2]: ")
+                #Option to continue
                 if continue_mode == "1":
                     continue
+                #Option to change gamemode
                 else:
+                    #tally up wins and loss of the rounds and add to Total win/loss
                     win_total = win_total + win
                     loss_total = loss_total + loss
                     mode = "none"
@@ -152,31 +159,44 @@ while mode == "none":
         #Dice Rolling Game
         while mode == "dice":
 
-                #three rounds/game function
+                #rounds initially set to 0
                 rounds = 0
+
+                #Game begins for 3 rounds
                 while rounds < 3:
-                    #Plyaer    
+                    #set roll to 0
                     player_roll = 0
+
+                    #Player choose the amount of sides on the dice
                     dice_sides = input("How many sides do you want the dice to have [above 2]: ")
+
+                    #checks if dice_sides input is an integer
                     try:
                         dice_sides = int(dice_sides)
+                    #loops back to dice_sides if dice_sides is not an integer
                     except ValueError:
                             continue
+                    #loops back to dice_sides if input is 2 or below (impossible shape)
                     if dice_sides <= 2:
                             print("Must be above 2")
                             print("-"*30)
                             continue
-                    
+
+                    #begins to roll and receive a side
                     player_roll = random.randint(1, dice_sides)
 
-                    #CPU
+                    #CPU roll set to 0
                     cpu_roll = 0
+                    #CPU begins to roll and receive a side using the input as the range
                     cpu_roll = random.randint(1, dice_sides)
 
                     print('\n')
-                    
+
+                    #print the sides rolled from both Player and CPU
                     print("Player: " + str(player_roll))
                     print("CPU: " + str(cpu_roll))
+
+                    #win/loss/tie conditions with comparative operations 
                     if player_roll > cpu_roll:
                             win = win + 1
                             print("You Win")
@@ -186,16 +206,21 @@ while mode == "none":
                     else:
                             print("Tie")
 
+                    #print total wins and loss for each round
                     print("Wins: " + str(win))
                     print("Loss: " + str(loss))
                     
                     print('\n')
+
+                    #count rounds to limit loop
                     rounds = rounds + 1
 
                 #continue or change mode
                 continue_mode = input("Continue [1] or Change Mode [2]: ")
+                #Option to continue
                 if continue_mode == "1":
                     continue
+                #Option to change gamemode
                 else:
                     win_total = win_total + win
                     loss_total = loss_total + loss
