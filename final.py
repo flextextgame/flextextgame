@@ -153,6 +153,7 @@ while mode == "none":
                     #tally up wins and loss of the rounds and add to Total win/loss
                     win_total = win_total + win
                     loss_total = loss_total + loss
+                    #change Mode to return to Menu
                     mode = "none"
 
 
@@ -222,30 +223,33 @@ while mode == "none":
                     continue
                 #Option to change gamemode
                 else:
+                    #tally up wins and loss and transfer to Total wins/loss
                     win_total = win_total + win
                     loss_total = loss_total + loss
+                    #change Mode to return to Menu
                     mode = "none"
                     
 
         #Card Game
         while mode == "cards":
 
-                #Higher Lower Card Game
-
-                #initial win/loss values
-                win = 0
-                loss = 0
-                
-                #three rounds/game function
+                #initially set rounds to 0
                 rounds = 0
+
+                #begin game for 3 rounds
                 while rounds < 3:
                         
-                        #deck shuffling                                     
+                        #set shuffle option to *blank*                                  
                         shuffle = ""
+                        #loop shuffle when *blank*
                         while shuffle == "":
+                                #13 cards defined in deck
                                 deck = ["Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King"]
+                                #deck multiplied to get full deck
                                 deck = deck * 4
+                                #shuffled deck set blank
                                 shuffled_deck = []
+                                #begin shuffling for 52 times
                                 for i in range(52):
                                         shuffled_deck.append(random.choice(deck))
                                         deck.remove(shuffled_deck[i])
