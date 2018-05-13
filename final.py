@@ -251,7 +251,9 @@ while mode == "none":
                                 shuffled_deck = []
                                 #begin shuffling for 52 times
                                 for i in range(52):
+                                        #duplicate a card from deck to shuffled_deck
                                         shuffled_deck.append(random.choice(deck))
+                                        #removes the same card duplicated in shuffled_deck from deck
                                         deck.remove(shuffled_deck[i])
                                 print(shuffled_deck)
                                 
