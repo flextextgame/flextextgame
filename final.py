@@ -256,38 +256,52 @@ while mode == "none":
                                         #removes the same card duplicated in shuffled_deck from deck
                                         deck.remove(shuffled_deck[i])
                                 print(shuffled_deck)
-                                
+
+                                #print new line (blank spaces)
                                 print('\n')
                                 
                                 shuffle = input("Do you want to shuffle the deck [Yes or No]: ")
                                 shuffle = shuffle.lower()
                                 if shuffle == "yes":
+                                        #print new line (blank spaces)
                                         print('\n')
                                         shuffle = ""
                                         continue
                                 if shuffle != "no":
                                         shuffle = ""
                                         print("Must be either of the two options in square brackets.")
+
+                                        #print new line (blank spaces)
                                         print('\n')
+                                        
                                         continue                                
 
                         #CPU
                         cpu_select = random.choice(shuffled_deck)
 
+                        #print new line (blank spaces)
                         print('\n')
                         
                         #Plyaer: sides
                         pick_side = ""
                         while pick_side == "":
                                 print(shuffled_deck)
+                                
+                                #print new line (blank spaces)
                                 print('\n')
+
+                                #Player pick 18 cards of either of the three sides from shuffled_deck
                                 pick_side = input("Pick a side to pick from [left, middle, right]: ")
+                                #converts input from pick_side to all lowercase
                                 pick_side = pick_side.lower()
+                                #loops to pick a side again if either of the three choices are not met
                                 if pick_side != "left":
                                         if pick_side != "middle":
                                                 if pick_side != "right":
                                                         pick_side = ""
                                                         continue
+
+                                #Player chooses a card from the 18 card on the left side of shuffled_deck
                                 if pick_side == "left":
                                         select_deck = shuffled_deck[:18]
                                         print(select_deck)
