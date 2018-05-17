@@ -289,7 +289,6 @@ while mode == "none":
                         #ask Player to pick a side from shuffled_deck when spread out in imaginary hands
                         while pick_side == "":
 
-                                #print new line (blank spaces)
                                 print('\n')
 
                                 #Player pick 18 cards of either of the three sides from shuffled_deck
@@ -305,7 +304,8 @@ while mode == "none":
                                                 if pick_side != "right":
                                                         pick_side = ""
                                                         continue
-                                                
+                                print('\n')
+                                
                                 #if Player picked the left side
                                 if pick_side == "left":
                                         #cards from the furthest left to the right until the 18th card
@@ -356,6 +356,8 @@ while mode == "none":
                                 #select card according to Player's input
                                 player_select = select_deck[card_select]
 
+                        print('\n')
+
                         #Print cards selected by both Player and CPU
                         print("Player: " + str(player_select))
                         print("CPU: " + str(cpu_select))
@@ -390,10 +392,14 @@ while mode == "none":
                         else:
                                 print("Tie")
 
+                        print('\n')
+
                         #prints win/loss statistics of the round
                         print("Wins: " + str(win))
                         print("Loss: " + str(loss))
 
+                        #keeps shuffled_deck the same for each round
+                        shuffle_error = 1
                         #count rounds to limit loop of gamemode
                         rounds = rounds + 1
 
