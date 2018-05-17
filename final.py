@@ -251,7 +251,10 @@ while mode == "none":
                                                 deck.remove(shuffled_deck[i])                                        
                                 if shuffle_error == 1:
                                         shuffled_deck == shuffled_deck
-                                                                      
+
+                                shuffled_deck = []
+
+
                                 print('\n')
 
                                 #ask Player if they want to shuffle deck again
@@ -260,37 +263,49 @@ while mode == "none":
                                 shuffle = shuffle.lower()
                                 #shuffle again if input is "yes"
                                 if shuffle == "yes":
+                                        #print new line (blank spaces)
                                         print('\n')
                                         shuffle = ""
                                         shuffle_error = 0
                                         continue
+                                
                                 #loops to asking to shuffle again if answer is neither "yes" or "no"
                                 if shuffle != "no":
                                         shuffle_error = 1
                                         shuffle = ""
                                         print("Must be either of the two options in square brackets.")
+                                        #print new line (blank spaces)
                                         print('\n')
                                         continue                                
 
                         #CPU selects a card from shuffled_deck
                         cpu_select = random.choice(shuffled_deck)
 
+                        #print new line (blank spaces)
                         print('\n')
                         
                         #resets what Player input is for the side they pick (refer to below for details)
                         pick_side = ""
                         #ask Player to pick a side from shuffled_deck when spread out in imaginary hands
                         while pick_side == "":
+
+                                #print new line (blank spaces)
                                 print('\n')
+
+                                #Player pick 18 cards of either of the three sides from shuffled_deck
                                 pick_side = input("Pick a side to pick from [left, middle, right]: ")
                                 #makes sure text-based input is applicable for string comparison
                                 pick_side = pick_side.lower()
                                 #loops to side picking if either of the three choices aren't met
+                                #converts input from pick_side to all lowercase
+                                pick_side = pick_side.lower()
+                                #loops to pick a side again if either of the three choices are not met
                                 if pick_side != "left":
                                         if pick_side != "middle":
                                                 if pick_side != "right":
                                                         pick_side = ""
                                                         continue
+                                                
                                 #if Player picked the left side
                                 if pick_side == "left":
                                         #cards from the furthest left to the right until the 18th card
@@ -304,6 +319,7 @@ while mode == "none":
                                         except ValueError:
                                                 pick_side = ""
                                                 continue
+                                        #accomodates for index as the 1st card is at position 0
                                         card_select = card_select - 1
                                         
                                 #if Player picked the middle side
@@ -319,7 +335,9 @@ while mode == "none":
                                         except ValueError:
                                                 pick_side = ""
                                                 continue
+                                        #accomodates for index as the 1st card is at position 0
                                         card_select = card_select - 1
+                                        
                                 #if Player picked the right side        
                                 if pick_side == "right":
                                         #asks Player to select a card from the furthest right to the left until the 18th card
