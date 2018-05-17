@@ -26,6 +26,7 @@ Cards: Select a card from the shuffled deck
         Jack = 11
         Queen = 12
         King = 13
+Note: every "print('\n')" is creating extra blank lines to space out texts
 """
 
 
@@ -256,39 +257,51 @@ while mode == "none":
                                 print(shuffled_deck)
                                 
                                 print('\n')
-                                
+
+                                #ask Player if they want to shuffle deck again
                                 shuffle = input("Do you want to shuffle the deck [Yes or No]: ")
+                                #makes sure all alphabets are lowercase for string comparison
                                 shuffle = shuffle.lower()
+                                #shuffle again if input is "yes"
                                 if shuffle == "yes":
                                         print('\n')
                                         shuffle = ""
                                         continue
+                                #loops to asking to shuffle again if answer is neither "yes" or "no"
                                 if shuffle != "no":
                                         shuffle = ""
                                         print("Must be either of the two options in square brackets.")
                                         print('\n')
                                         continue                                
 
-                        #CPU
+                        #CPU selects a card from shuffled_deck
                         cpu_select = random.choice(shuffled_deck)
 
                         print('\n')
                         
-                        #Plyaer: sides
+                        #resets what Player input is for the side they pick (refer to below for details)
                         pick_side = ""
+                        #ask Player to pick a side from shuffled_deck when spread out in imaginary hands
                         while pick_side == "":
+                                #delete
                                 print(shuffled_deck)
                                 print('\n')
                                 pick_side = input("Pick a side to pick from [left, middle, right]: ")
+                                #makes sure text-based input is applicable for string comparison
                                 pick_side = pick_side.lower()
+                                #loops to side picking if either of the three choices aren't met
                                 if pick_side != "left":
                                         if pick_side != "middle":
                                                 if pick_side != "right":
                                                         pick_side = ""
                                                         continue
+                                #if Player picked the left side
                                 if pick_side == "left":
+                                        #cards from the furthest left to the right until the 18th card
                                         select_deck = shuffled_deck[:18]
+                                        #delete
                                         print(select_deck)
+                                        #asks Player to select a card from the given range inputed
                                         card_select = input("There are 18 cards. Pick one [1 to 18]: ")
                                         try:
                                                 card_select = int(card_select)
@@ -296,11 +309,15 @@ while mode == "none":
                                                 pick_side = ""
                                                 continue
                                         card_select = card_select - 1
-                                
+                                        
+                                #if Player picked the left side
                                 if pick_side == "middle":
+                                        #asks Player to select a card from the 18 cards in the middle section (9 from the left to 9 from the right)
                                         select_deck = shuffled_deck[16:34]
+                                        #delete
                                         print(select_deck)
-                                        card_select = input("There are 5 cards. Pick one [1 to 18]: ")
+                                        #asks Player to select a card from the given range inputed
+                                        card_select = input("There are 18 cards. Pick one [1 to 18]: ")
                                         try:
                                                 card_select = int(card_select)
                                         except ValueError:
@@ -309,9 +326,12 @@ while mode == "none":
                                         card_select = card_select - 1
                                         
                                 if pick_side == "right":
+                                        #asks Player to select a card from the furthest right to the left until the 18th card
                                         select_deck = shuffled_deck[34:]
+                                        #delete
                                         print(select_deck)
-                                        card_select = input("There are 5 cards. Pick one [1 to 5]: ")
+                                        #asks Player to select a card from the given range inputed
+                                        card_select = input("There are 18 cards. Pick one [1 to 18]: ")
                                         try:
                                                 card_select = int(card_select)
                                         except ValueError:
