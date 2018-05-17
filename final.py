@@ -354,7 +354,7 @@ while mode == "none":
                                         #accomodates for index as the 1st card is at position 0
                                         card_select = card_select - 1
                                 #select card according to Player's input
-                                player_select = select_deck[card_select]=
+                                player_select = select_deck[card_select]
 
                         #Print cards selected by both Player and CPU
                         print("Player: " + str(player_select))
