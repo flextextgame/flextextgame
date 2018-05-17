@@ -37,9 +37,9 @@ while mode == "none":
 
         #print total win/loss under the following conditions
         if win_total > 0:
-                print("Total Win: " + win_total)
+                print("Total Win: " + str(win_total))
         if loss_total > 0:
-                print("Total loss: " + loss_total)
+                print("Total loss: " + str(loss_total))
 
         #Menu: asks player to choose either of the three gamemodes
         mode = input("RPS, Dice, or Cards: ")
@@ -171,7 +171,7 @@ while mode == "none":
                     #loops back to dice_sides if input is 2 or below (impossible shape)
                     if dice_sides <= 2:
                             print("Must be above 2")
-                            print("-"*30)
+                            print('\n')
                             continue
 
                     #begins to roll and receive a side
@@ -226,14 +226,13 @@ while mode == "none":
 
                 #initially set rounds to 0
                 rounds = 0
-
+                #shuffling error state set to 0
+                shuffle_error = 0
                 #begin game for 3 rounds
                 while rounds < 3:
                         
                         #set shuffle option to *blank*                                  
                         shuffle = ""
-                        #shuffling error state set to 0
-                        shuffle_error = 0
                         #loop shuffle when *blank*
                         while shuffle == "":
                                 #13 cards defined in deck
@@ -252,15 +251,13 @@ while mode == "none":
                                 if shuffle_error == 1:
                                         shuffled_deck == shuffled_deck
 
-                                shuffled_deck = []
-
-
                                 print('\n')
 
                                 #ask Player if they want to shuffle deck again
                                 shuffle = input("Do you want to shuffle the deck [Yes or No]: ")
                                 #makes sure all alphabets are lowercase for string comparison
                                 shuffle = shuffle.lower()
+                                
                                 #shuffle again if input is "yes"
                                 if shuffle == "yes":
                                         #print new line (blank spaces)
@@ -270,16 +267,19 @@ while mode == "none":
                                         continue
                                 
                                 #loops to asking to shuffle again if answer is neither "yes" or "no"
-                                if shuffle != "no":
-                                        shuffle_error = 1
-                                        shuffle = ""
-                                        print("Must be either of the two options in square brackets.")
-                                        #print new line (blank spaces)
-                                        print('\n')
-                                        continue                                
+                                if shuffle != "yes":
+                                        if shuffle != "no":
+                                                shuffle_error = 1
+                                                shuffle = ""
+                                                print("Must be either of the two options in square brackets.")
+                                                #print new line (blank spaces)
+                                                print('\n')
+                                                continue                                
 
-                        #CPU selects a card from shuffled_deck
-                        cpu_select = random.choice(shuffled_deck)
+                                #do not shuffle if input is 'no'
+                                if shuffle == "no":
+                                        #CPU selects a card from shuffled_deck
+                                        cpu_select = random.choice(shuffled_deck)
 
                         #print new line (blank spaces)
                         print('\n')
