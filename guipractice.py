@@ -2,19 +2,12 @@ from tkinter import *
 
 root = Tk()
 
-topFrame = Frame(root)
-topFrame.pack()
-bottomFrame = Frame(root)
-bottomFrame.pack(side=BOTTOM)
+test=Label(root, text="Test")
+test.grid(row=0)
+entry=Entry(root)
+entry.grid(row=0, column=1)
+enter=Button(root, text="Enter")
+enter.grid(row=0, column=2)
 
-button1 =Button(topFrame, text="Button 1", fg="red")
-button2 =Button(topFrame, text="Button 2", fg="blue")
-button3 =Button(topFrame, text="Button 3", fg="green")
-button4 =Button(bottomFrame, text="Button 4", fg="purple")
-
-button1.pack(side=LEFT, fill=X)
-button2.pack(side=RIGHT)
-button3.pack(side=LEFT)
-button4.pack(side=BOTTOM)
 
 root.mainloop()
