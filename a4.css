@@ -1,0 +1,53 @@
+div{
+	border: 2px;
+	color:black;
+}
+
+#container{
+	margin-right: auto;
+	margin-left: auto;
+	width: 95%;
+	height: 1400px;
+	background-color: black;
+	padding:30px;
+}
+
+#header{
+	margin: 20px;
+	width: 80%;
+	height: 70px;
+	float: left;
+	background-color: grey;
+	padding:10px;
+}
+
+.submenu{
+	margin-left: auto;
+	margin-right: auto;
+	width: 100px;
+	height: 40px;
+	background-color: yellow;
+	margin: 20px;
+	float: left;
+	text-align: center;
+	padding:5px;
+	
+}
+
+#content{
+	margin-right: auto;
+	width: 80%;
+	height: 1300px;
+	background-color: grey;
+	clear: left;
+}
+
+img{
+	margin-right: auto;
+	margin-left: auto;
+	margin: 30px;
+}
+
+li{
+	font-size: 25px;
+}
