@@ -1,6 +1,5 @@
-import tkitner as *
+from tkinter import *
 import random
-import final as *
 
 #All Pseudo coding, need text-based project file to integrate and compromise
 
@@ -10,38 +9,39 @@ loss_Total = 0
 screen = 1
 
 
-root = Tk.tk()
+root = Tk()
 
 #Define all frames
-scoreFrame = Frame(root, side = LEFT)
+scoreFrame = Frame(root)
 gameFrame = Frame(root)
-optionsFrame = Frame(root, side = BOTTOM)
+optionsFrame = Frame(root)
 
-scoreFrame.pack()
+#left side
+scoreFrame.pack(side=LEFT)
+#right-top side
 gameFrame.pack()
-optionsFrame.pack()
+#right-bottom side
+optionsFrame.pack(side=BOTTOM)
 
 
 #Scores for all wins and loss
-
-def win_Score(win_Tally):
+win_Total = 0
+win_Round = 0
+def win_Score(win_Total):
 	win_Total = win_Total + win_Round
-def loss_Score(loss_Tally):
-	win_Total = win_Total + win_Round
+def loss_Score(loss_Total):
+	loss_Total = loss_Total + loss_Round
 
+win_Total = Label(scoreFrame, fg = "red")
+loss_Total = Label(scoreFrame, fg = "red")
 #Text for labeling
-win_Text = Label(scoreFrame, text = "wins:", sticky = E)
-loss_Text = Label(scoreFrame, text = "wins:", sticky = E)
-
-#Counting score text
-win_Tally = Label(scoreFrame, fg = "red")
-loss_Tally = Label(scoreFrame, fg = "red")
+win_Text = Label(scoreFrame, text = "Wins:")
+loss_Text = Label(scoreFrame, text = "Loss:")
 
 #Arranged for display
-win_Text.grid(row = 0)
-win_Tally.grid(row = 0, column = 1)
-loss_Text.grid(row = 1)
-loss_Tally.grid(row = 1, column = 1)
+win_Text.grid(row=0)
+win_Total.pack(row=0, column=1)
+win_Score(win_Total)
 
 
 #All Player input in given lines
