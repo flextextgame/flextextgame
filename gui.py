@@ -1,6 +1,4 @@
-import tkitner as *
 import random
-import final as *
 
 #All Pseudo coding, need text-based project file to integrate and compromise
 
