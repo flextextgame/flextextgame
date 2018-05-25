@@ -7,10 +7,7 @@ html, body{
 	vertical-align: baseline;
 }
 
-div{
-	border: 2px;
-	color:black;
-}
+
 
 #container{
 	width: 100%;
@@ -38,7 +35,12 @@ div{
 	vertical-align: middle;
 	padding: 10px 15px 5px;
 	list-style: none;
-	border-left: 1px black solid;
+}
+
+.button{
+	width: auto;
+	padding: 10px 5px 5px;
+	background-color: blue;
 }
 
 #content{
