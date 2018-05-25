@@ -1,5 +1,5 @@
 @echo off
-xcopy . y:\ddccode2\finalproject /s  /y
+xcopy . y:\ddccode1\assignment4\finalproject /s  /y
 echo.
 echo done
 echo.
