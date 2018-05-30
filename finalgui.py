@@ -11,6 +11,9 @@ screen = 1
 
 root = Tk()
 
+root.title('FlexText Game')
+root.geometry("500x500")
+
 #Define all frames
 scoreFrame = Frame(root)
 gameFrame = Frame(root)
@@ -32,6 +35,10 @@ loss = Label(scoreFrame, text = "Loss:", fg = "red")
 loss.grid(row = 1)
 loss_Total = Label(scoreFrame, text = "0", fg = "blue")
 loss_Total.grid(row = 1, column = 1)
+
+#visual section
+one = Label(gameFrame, text = "Testing this stuff out", fg = "red", bg = "blue")
+one.pack(fill = X, expand = YES)
 
 #player input frame
 #when mode is "none"
