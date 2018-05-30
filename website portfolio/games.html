@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!--link html file to CSS file-->
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Steven's Webpage</title>
+</head>
+
+
+<body>
+	<!--image banner-->
+	<div style="text-align: center; position: relative">
+		<!--text overlay-->
+		<p class="content_text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 50px">This is an image</p>
+		<!--image-->
+		<img src="Autumn shift dark.png" width="100%" height="200px">
+	</div>
+
+	<!--menu (navbar)-->
+	<ul id="header">
+		<!--Home-->
+		<li>
+			<a href="index.html">Home</a>
+		</li>
+		<!--Graphic Designs-->
+		<li>
+			<a href="graphic.html">Graphic Designs</a>
+		</li>
+		<!--Game(s)-->
+		<li>
+			<a href="games.html">Game(s)</a>
+		</li>
+		<!--About (with dropdown menu)-->
+		<li class="dropdown">
+			<a class="active">More</a>
+			<div class="dropdown-content">
+				<!--RPG Stats-->
+				<a href="rpgstat.html">RPG Stats</a>
+				<!--Music Preferences-->
+				<a href="music.html">Music Preferences</a>
+			</div>
+		</li>
+	</ul>
+
+	<!--content below menu-->
+	<div id="content">
+		<!--header title-->
+		<h1  class="content_header">FlexText Game</h1>
+		<p class="content_text">
+			A text-based game with 3 different games: Rock Paper Scissors, Dice rolling, and Cards. This is a random number generator against a computer, which means the object is to get a higher value than the computer.
+
+		<!--link with labeling-->
+		<div style="display: inline-block;">
+			<!--label-->
+			<p class="content_text" style="margin-top: 30px; text-decoration: underline; float: left">Link:</p>
+			<!--link-->
+			<a href="https://github.com/flextextgame/flextextgame" style="text-decoration: none; color: white; font-family: Lucida Console; font-size: 18px; margin-top: 30px; margin-left: 10px; float: left;">FlexText Game</a>
+		</div>
+
+		<!--date of change-->
+		<i><p id="page_update">Update: 05/289/2018</p></i>	
+	</div>
+
+	<!--text below content area-->
+	<p id="credentials">
+		This webpage is created by Steven Van. Everyone is free to use the source code and modify it.
+	</p>
+</body>
+
+</html>
