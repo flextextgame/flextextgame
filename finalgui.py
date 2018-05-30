@@ -14,15 +14,16 @@ root = Tk()
 #Define all frames
 scoreFrame = Frame(root)
 gameFrame = Frame(root)
-optionsFrame = Frame(root)
+playerFrame = Frame(root)
 
 #left side
 scoreFrame.pack(side=LEFT)
 #right-top side
 gameFrame.pack()
 #right-bottom side
-optionsFrame.pack(side=BOTTOM)
+playerFrame.pack()
 
+#score frame on left
 wins = Label(scoreFrame, text = "Wins:", fg = "red")
 wins.grid(row = 0)
 win_Total = Label(scoreFrame, text = "0", fg = "blue")
@@ -32,4 +33,14 @@ loss.grid(row = 1)
 loss_Total = Label(scoreFrame, text = "0", fg = "blue")
 loss_Total.grid(row = 1, column = 1)
 
+#player input frame
+#when mode is "none"
+rpsButton = Button(playerFrame, text = "RPS", fg = "red")
+diceButton = Button(playerFrame, text = "Dice", fg = "red")
+cardsButton = Button(playerFrame, text = "Cards", fg = "red")
+
+rpsButton.pack(side=LEFT)
+diceButton.pack(side=LEFT)
+cardsButton.pack(side=LEFT)
+    
 root.mainloop()
