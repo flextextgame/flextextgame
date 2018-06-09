@@ -208,20 +208,17 @@ while mode == "none":
                     rounds = rounds + 1
 
                 #continue or change mode
-                while rounds == 3:
-                        continue_mode = input("Continue [1] or Change Mode [2]: ")
-                        #Option to continue
-                        if continue_mode == "1":
-                            continue
-                        #Option to change gamemode
-                        if == "2":
-                            #tally up wins and loss and transfer to Total wins/loss
-                            win_total = win_total + win
-                            loss_total = loss_total + loss
-                            #change Mode to return to Menu
-                            mode = "none"
-                        else:
-                                continue
+                continue_mode = input("Continue [1] or Change Mode [2]: ")
+                #Option to continue
+                if continue_mode == "1":
+                    continue
+                #Option to change gamemode
+                else:
+                    #tally up wins and loss of the rounds and add to Total win/loss
+                    win_total = win_total + win
+                    loss_total = loss_total + loss
+                    #change Mode to return to Menu
+                    mode = "none"
                     
 
         #Card Game
